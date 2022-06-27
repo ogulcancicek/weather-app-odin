@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+*,html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --darkColor : rgb(55, 55, 55);
+    --lightColor: rgb(224, 224, 224);
+    --orangeColor: rgb(242, 109, 0);
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--lightColor) !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 2.5rem;
+    background-color: var(--darkColor);
+    color: var(--lightColor);
+
+}
+
+nav > p{
+    margin-top: 15px;
+}
+
+nav > i{
+    color: var(--orangeColor);
+}
+
+.app-container{
+    width: 100%;
+    min-height: calc(100vh - 130px);
+}
+
+.search-box{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--darkColor) !important;
+}
+
+.search-box-input{
+    width: 300px;
+    height: 30px;
+    text-indent: 5px;
+    outline: 0;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.location-search-btn{
+    height: 30px;
+    width: 60px;
+    border: 1px solid black;
+    outline: 0;
+    background-color: var(--orangeColor);
+}
+
+.weather-data-container{
+    width: 100%;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.current-day-weather-data-container{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    
+}
+
+.current-stats-container{
+    background-color: var(--darkColor);
+    color: var(--lightColor);
+    border-radius: 10px;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+}
+
+#city-name{
+    margin-top: 5px;
+    font-size: 2rem;
+    text-decoration: underline;
+    color: var(--orangeColor);
+}
+
+#current-temp{
+    font-size: 2.5rem;
+}
+
+.hourly-weather-data-container{
+    border: 2px solid var(--darkColor);
+    width: 700px;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    overflow-x: overlay;
+    overflow-y: hidden;
+
+}
+
+.hourly-weather-data-container::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+}
+
+.hourly-weather-data-container::-webkit-scrollbar-thumb {
+    background-color: var(--orangeColor);
+}
+
+
+.hourly-weather-data{
+    background-color: var(--darkColor);
+    color: var(--lightColor);
+    height: 250px;
+    min-width: 200px;
+    text-align: center;
+    position: relative;
+}
+
+.hourly-time{
+    margin-top: 10px;
+    font-size: 1.6rem;
+}
+
+.hourly-temp{
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.hourly-feels-like{
+    position: absolute;
+    width: 100%;
+    bottom: 15px;
+}
+
+[data-value="Now"]{
+    color: var(--orangeColor);
+    text-decoration: underline;
+    font-size: 2rem;
+}
+
+.daily-weather-data-container{
+    width: 80%;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.daily-stat{
+    background-color: var(--darkColor);
+    color: var(--lightColor);
+    border-radius: 10px;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.daily-temp-cont, .daily-chance-of-rain-cont, .daily-humidity-cont{
+    font-size: 0.6rem;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.daily-day{
+    width: 150px;
+    margin-top: 15px;
+}
+
+footer{
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--darkColor);
+    color: var(--lightColor);
+}
+
+.footer-text{
+    margin-top: 15px;
+}
+
+.footer-text > a{
+    color: var(--orangeColor);
+}
+
+@media screen and (max-width: 650px){
+    .current-stats-container{
+        width: 200px;
+        height: 200px;
+    }
+    
+    #city-name{
+        font-size: 1.5rem;
+    }
+
+    #current-temp{
+        font-size: 1.3rem;
+    }
+
+    .current-stats-container > p{
+        font-size: 0.8rem;
+    }
+
+    .hourly-weather-data-container{
+        height: 150px;
+        width: 600px;
+    }
+
+    .hourly-weather-data{
+        height: 150px;
+        width: 100px;
+    }
+
+    .hourly-feels-like{
+        font-size: 0.8rem;
+        bottom: 0;
+    }
+
+    .daily-chance-rain-title{
+        width: 60px;
+    }
+
+    .daily-chance-of-rain{
+        margin-top: -10px;
+    }
+
+    .daily-weather-data-container{
+        width: 90%;
+    }
+
+}
